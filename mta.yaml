@@ -1,0 +1,58 @@
+ID: mta_SampleApp5
+_schema-version: '2.1'
+parameters:
+  deploy_mode: html5-repo
+version: 0.0.1
+modules:
+  - name: mta-sampleapp5-approuter
+    type: approuter.nodejs
+    path: mta-sampleapp5-approuter
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: mta_SampleApp5_html5_repo_runtime
+      - name: uaa_mta_SampleApp5
+  - name: mta_SampleApp5_ui_deployer
+    type: com.sap.html5.application-content
+    path: mta_SampleApp5_ui_deployer
+    requires:
+      - name: mta_SampleApp5_html5_repo_host
+    build-parameters:
+      requires:
+        - name: SampleApp5
+          artifacts:
+            - './*'
+          target-path: resources/SampleApp5
+  - name: SampleApp5
+    type: html5
+    path: SampleApp5
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
+resources:
+  - name: mta_SampleApp5_html5_repo_runtime
+    parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
+  - name: mta_SampleApp5_html5_repo_host
+    parameters:
+      service-plan: app-host
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
+  - name: uaa_mta_SampleApp5
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: dest_mta_SampleApp5
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service
