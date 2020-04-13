@@ -5,6 +5,8 @@ node() {
         setupCommonPipelineEnvironment script:this
     }
     stage('test') {
+        if (isUnix()) --> sh "command"
+        else --> bat "command"
 	    mtaBuild script: this
 	}
 	stage('deploy') {
