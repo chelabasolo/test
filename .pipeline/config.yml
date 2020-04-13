@@ -3,9 +3,9 @@ steps:
   mtaBuild:
     buildTarget: 'CF'
     cloudFoundryDeploy:
-	    deployTool: 'mtaDeployPlugin'
-	    deployType: 'standard'
-	    cloudFoundry:
-	      org: 'p2001383561trial'
-	      space: 'qa'
-	      credentialsId: 'CF_CREDENTIALSID'
+        deployTool: 'mtaDeployPlugin'
+        deployType: 'standard'
+        cloudFoundry:
+          org: 'p2001383561trial'
+          space: 'qa'
+          credentialsId: 'CF_CREDENTIALSID'
