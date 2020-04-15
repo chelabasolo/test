@@ -34,3 +34,13 @@ steps:
       dockerImage: 'ruby:2.5.3-stretch'
       dockerName: 'bundler'
       dockerWorkspace: ''
+  uiVeri5ExecuteTests:
+    failOnError: false
+    dockerEnvVars: {}
+    installCommand: 'npm install @ui5/uiveri5 --global --quiet'
+    seleniumPort: 4444
+    stashContent:
+      - 'buildDescriptor'
+      - 'tests'
+    testOptions: ''
+    runCommand: "uiveri5 --seleniumAddress='http://${config.seleniumHost}:${config.seleniumPort}/wd/hub'"
