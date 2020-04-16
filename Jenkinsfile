@@ -17,7 +17,7 @@ node() {
             sh "${mvnHome}/bin/mvn -B -DskipTests clean install"
             //sh "mavenproject10-1.0-SNAPSHOT.jar"
             cd 'target'
-            java -jar mavenproject10-1.0-SNAPSHOT.jar
+            java -jar "mavenproject10-1.0-SNAPSHOT.jar"
        }
        
        //dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10/target") {
