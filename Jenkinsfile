@@ -13,7 +13,8 @@ node() {
        
        def mvnHome = tool name: 'M3', type: 'maven'
        dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10") {
-            sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+            //sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+            sh "${mvnHome}/bin/mvn -B -DskipTests clean install"
        }
        
        dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10/target") {
