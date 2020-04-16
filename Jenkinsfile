@@ -40,7 +40,11 @@ node() {
            target: 'https://api.cf.eu10.hana.ondemand.com',
            organization: 'p2001383561trial',
            cloudSpace: 'qa',
-           credentialsId: 'CF_CREDENTIALSID'
+           credentialsId: 'CF_CREDENTIALSID',
+           manifestChoice: [
+              value: 'jenkinsConfig',
+              appName: 'SampleApp5'
+            ]
         )
 	}   
 }         
