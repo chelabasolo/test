@@ -33,7 +33,14 @@ node() {
 	stage('deploy') {
 		//mtaBuild script: this
 	    //cloudFoundryDeploy script: this  
-	    sh "cf login -u chelabasolo03@gmail.com - p sp0617Chel -s dev -o p2001383561trial"
-	    sh "cf push mta_SampleApp5"
+	    //sh "cf login -u chelabasolo03@gmail.com - p sp0617Chel -s dev -o p2001383561trial"
+	    //sh "cf push mta_SampleApp5"
+	    
+	    pushToCloudFoundry(
+           target: 'https://api.cf.eu10.hana.ondemand.com',
+           organization: 'p2001383561trial',
+           cloudSpace: 'qa',
+           credentialsId: 'CF_CREDENTIALSID'
+        )
 	}   
 }         
