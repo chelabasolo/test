@@ -11,7 +11,10 @@ node() {
         //  sh "mvn clean install"
        //}
        def mvnHome = tool name: 'M3', type: 'maven'
-       sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+       dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10") {
+            sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+       }
+       
        //dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10/target") {
        //   sh "mavenproject10-1.0-SNAPSHOT.jar"
        //}
