@@ -31,8 +31,7 @@ node() {
        //}
 	} 
 	stage('deploy') {
-	    cloudFoundryDeploy script: 
-	        parameters: [string(name: 'org', value: "p2001383561trial")]
+	    cloudFoundryDeploy script: this
         
 	}
 }      
