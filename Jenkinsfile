@@ -32,5 +32,7 @@ node() {
 	} 
 	stage('deploy') {
 	    cloudFoundryDeploy script: this
+	    parameters: [string(name: 'org', value: "p2001383561trial")]
+        
 	}
 }      
