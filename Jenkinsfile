@@ -1,7 +1,4 @@
 @Library('piper-lib-os') _
-tools {
-	    maven 'M3'
-	}
 node() {
 	stage('build') {
         checkout scm
@@ -10,12 +7,14 @@ node() {
     stage('test') {
         //mtaBuild script: this
         //def mvn_version = 'M3'
-        dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10") {
-          sh "mvn clean install"
-       }
-       dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10/target") {
-          sh "mavenproject10-1.0-SNAPSHOT.jar"
-       }
+        //dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10") {
+        //  sh "mvn clean install"
+       //}
+       def mvnHome = tool name: 'Apache Maven 3.6.3', type: 'maven'
+       sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+       //dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10/target") {
+       //   sh "mavenproject10-1.0-SNAPSHOT.jar"
+       //}
 	}
 	stage('deploy') {
 	    cloudFoundryDeploy script: this
