@@ -12,7 +12,7 @@ node() {
        //}
        
        def mvnHome = tool name: 'M3', type: 'maven'
-       dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject12") {
+       dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject13") {
             //sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
             sh "${mvnHome}/bin/mvn -B -DskipTests clean install"
             
@@ -21,9 +21,9 @@ node() {
             //cd 'target'
             //java -jar 'mavenproject10-1.0-SNAPSHOT.jar'
             
-            stash includes: "target/*.jar", name: "mavenproject12-1.0-SNAPSHOT"
+            stash includes: "target/*.jar", name: "mavenproject13-1.0-SNAPSHOT"
             //sh "java -jar mavenproject12-1.0-SNAPSHOT"
-            sh "java -version"
+            
        }
         
        //dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10/target") {
