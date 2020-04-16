@@ -31,6 +31,7 @@ node() {
        //}
 	} 
 	stage('deploy') {
+		mtaBuild script: this
 	    cloudFoundryDeploy script: this
         
 	}
