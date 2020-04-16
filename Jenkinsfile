@@ -1,9 +1,9 @@
 @Library('piper-lib-os') _
-node() {
-	tools {
+tools {
 	    maven 'M3'
 	}
-    stage('build') {
+node() {
+	stage('build') {
         checkout scm
         setupCommonPipelineEnvironment script:this
     }
