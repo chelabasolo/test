@@ -14,14 +14,14 @@ node() {
        def mvnHome = tool name: 'M3', type: 'maven'
        dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10") {
             //sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
-            //sh "${mvnHome}/bin/mvn -B -DskipTests clean install"
-            sh "mvn clean install"
+            sh "${mvnHome}/bin/mvn -B -DskipTests clean install"
+            
             
             //sh "mavenproject10-1.0-SNAPSHOT.jar"
             //cd 'target'
             //java -jar 'mavenproject10-1.0-SNAPSHOT.jar'
             
-            stash includes: "target/*.jar", name: "mavenproject10-1.0-SNAPSHOT"
+            //stash includes: "target/*.jar", name: "mavenproject10-1.0-SNAPSHOT"
        }
        
        //dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10/target") {
