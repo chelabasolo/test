@@ -44,7 +44,7 @@ node() {
            manifestChoice: [
               value: 'jenkinsConfig',
               appName: 'SampleApp5'
-            ]
+            ] 
         )
 	}   
 }         
