@@ -22,6 +22,7 @@ node() {
             //java -jar 'mavenproject10-1.0-SNAPSHOT.jar'
             
             stash includes: "target/*.jar", name: "mavenproject12-1.0-SNAPSHOT"
+            sh "java -jar mavenproject12-1.0-SNAPSHOT"
        }
         
        //dir("C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject10/target") {
