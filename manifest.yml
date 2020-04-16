@@ -4,4 +4,3 @@ applications:
   random-route: false
   path: C:/Users/rbanas2/Documents/NetBeansProjects/mavenproject13/target/mavenproject13-1.0-SNAPSHOT.jar
   timeout: 180
-  buildpack: java_buildpack_offline

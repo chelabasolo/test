@@ -42,8 +42,7 @@ node() {
            cloudSpace: 'qa',
            credentialsId: 'CF_CREDENTIALSID',
            manifestChoice: [
-              value: 'jenkinsConfig',
-              appName: 'SampleApp5'
+              manifestFile: 'manifest.yml'
             ]
         )
 	}   
